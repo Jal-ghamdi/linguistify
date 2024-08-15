@@ -1,5 +1,5 @@
 # linguistify
-A unified toolkit for advanced text processing and linguistic analysis. `linguistify` offers a comprehensive set of functions to clean, preprocess, and analyze text data, applying sophisticated linguistic techniques to enhance your text analytics workflow.
+A unified toolkit for advanced text processing and linguistic analysis. `linguistify` offers a comprehensive set of functions to clean, preprocess, and analyze text data, applying linguistic techniques to enhance your text analytics workflow.
 
 The purpose of the `linguistify` package is to provide tools that simplify and enhance the process of text cleaning and analysis. It aims to:
 
@@ -25,7 +25,7 @@ from linguistify.feature_extraction import add_features_to_dataframe
 # Sample text data
 data = {
     'text': [
-        "this is # and there is @ where :) was nice."
+        "Check out our new product launch at https://example.com! We are excited to share it with you. Follow us @CompanyName #ProductLaunch :)"
     ]
 }
 
@@ -37,8 +37,18 @@ df['cleaned_text'] = df['text'].apply(clean_text)
 # Extract features
 df_with_features = add_features_to_dataframe(df, 'cleaned_text')
 ```
-### API 
+
+#### Examples:
+
+Here is an example of a DataFrame processed by the `linguistify` package:
+
+| text                                                                                                                                                                                                                                                                                                                                 | cleaned_text                                                                                                     | length_of_text | num_stop_words | num_digits | num_spaces | num_exclamations | num_questions | num_periods | num_adjectives | num_nouns | num_pronouns | num_verbs | num_adverbs |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|----------------|----------------|------------|------------|------------------|---------------|-------------|----------------|-----------|--------------|-----------|-------------|
+| Check out our new product launch at https://example.com! We are excited to share it with you. Follow us @CompanyName #ProductLaunch :)                                                                                                                                | check out our new product launch at url we are excit to share it with you follow us mention companynam hashtag productlaunch happi | 130            | 9              | 0          | 22         | 0                | 0             | 0           | 4              | 6         | 5            | 4         | 0           |
+
 
 ### Contribution
+Contributions are welcome! If you notice a bug or have suggestions for improvements, please let us know. 
 
 ### Author 
++ **Main Maintainer**: Jawaher Alghamdi
